@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Analysis - Proven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">proven</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product Analysis</a></li>
+            <li><a href="food.html">Food Analysis</a></li>
+            <li><a href="feedback.php">Query</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-btn" onclick="toggleTheme()">THEME</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>PRODUCT ANALYSIS</h1>
+        <p>Search products and check nutrition facts</p>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="productSearch" placeholder="Search product (maggie, cola, sprite)">
+        <button onclick="searchProduct()">Search</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid" id="productGrid">
+        <!-- Products will load here -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Proven - Food Health Analysis</p>
+        <p>Developed by CSE Students</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="foodName"></h2>
+            <div id="foodDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        loadAllProducts();
+
+        function loadAllProducts() {
+            let html = '';
+            for (let food in foodData) {
+                html += `
+                    <div class="product-card">
+                        <h3>${foodData[food].name}</h3>
+                        <button onclick="showFood('${food}')">Analyze</button>
+                    </div>
+                `;
+            }
+            document.getElementById('productGrid').innerHTML = html;
+        }
+
+        function searchProduct() {
+            let search = document.getElementById('productSearch').value.toLowerCase();
+            let html = '';
+            
+            for (let food in foodData) {
+                if (food.includes(search) || foodData[food].name.toLowerCase().includes(search)) {
+                    html += `
+                        <div class="product-card">
+                            <h3>${foodData[food].name}</h3>
+                            <button onclick="showFood('${food}')">Analyze</button>
+                        </div>
+                    `;
+                }
+            }
+            document.getElementById('productGrid').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

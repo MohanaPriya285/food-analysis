@@ -1,0 +1,227 @@
+===================================
+PROVEN FOOD HEALTH WEBSITE
+Quick Start Guide
+===================================
+
+📁 YOUR FILES:
+- 5 HTML pages (index.html, product.html, food.html, contact.html, feedback.php)
+- 1 CSS file (style.css) - all styling
+- 1 JavaScript file (script.js) - all functions
+- 2 PHP files (feedback.php, send_contact.php) - form handling
+
+===================================
+HOW TO RUN:
+===================================
+
+OPTION 1: XAMPP (Recommended)
+1. Download: https://www.apachefriends.org/
+2. Extract files to: C:\xampp\htdocs\proven\
+3. Start Apache in XAMPP Control Panel
+4. Open: http://localhost/proven/index.html
+
+OPTION 2: PHP Built-in Server
+1. Put all files in a folder
+2. Open Terminal/CMD in that folder
+3. Type: php -S localhost:8000
+4. Open: http://localhost:8000/index.html
+
+===================================
+WHAT EACH PAGE DOES:
+===================================
+
+✅ index.html
+   - Home page
+   - Search any food (e.g., idly, dosa, pizza)
+   - Shows nutrition facts in popup
+   - Shows health score (happy/sad emoji)
+
+✅ product.html
+   - Search packaged products
+   - Examples: maggie, coca cola, sprite
+   - Browse all products
+   - Click "Analyze" for details
+
+✅ food.html
+   - Browse foods by cuisine
+   - 3 types: South Indian, Chinese, Italian
+   - Click cuisine button to filter
+   - Click "Analyze" to see nutrition
+
+✅ contact.html
+   - Contact information
+   - Contact form
+   - Saves to contacts.txt
+
+✅ feedback.php
+   - Feedback/Query form
+   - Saves to feedbacks.txt
+   - Simple PHP form handler
+
+===================================
+FEATURES:
+===================================
+
+🔍 Search Foods
+   - Type food name and click Analyze
+   - Shows: Calories, Sodium, Protein, Carbs, Fat
+   - Shows health meter (Green/Yellow/Red)
+   - Shows emoji (😊 😐 😢)
+
+🎯 Browse by Type
+   - Home page has 3 cuisine cards
+   - Hover over card = link appears
+   - Click link to see foods of that type
+
+🌙 Theme Toggle
+   - Click sun/moon button in top right
+   - Switches between light and dark mode
+   - Saves your preference
+
+📝 Forms
+   - Contact form saves info to contacts.txt
+   - Feedback form saves to feedbacks.txt
+   - Simple text file storage (no database needed)
+
+===================================
+SIMPLE CODE STRUCTURE:
+===================================
+
+HTML (5 files):
+- index.html - 50 lines
+- product.html - 45 lines
+- food.html - 50 lines
+- contact.html - 70 lines
+- feedback.php - 45 lines
+
+CSS (1 file):
+- style.css - 250 lines
+- All colors, sizes, layouts
+
+JavaScript (1 file):
+- script.js - 150 lines
+- Search, theme toggle, food data
+- Modal popup functionality
+
+PHP (2 files):
+- feedback.php - 20 lines
+- send_contact.php - 10 lines
+- Just saves form data to files
+
+===================================
+CUSTOMIZATION:
+===================================
+
+ADD NEW FOOD:
+In script.js, find foodData and add:
+
+'biryani': {
+    name: 'Biryani',
+    calories: 420,
+    sodium: 600,
+    protein: 18,
+    carbs: 45,
+    fat: 18,
+    type: 'ok',
+    emoji: '😐'
+}
+
+CHANGE COLORS:
+In style.css, find #ff6b35 and replace:
+- #ff6b35 (orange) - main color
+- #1a1a1a (dark) - background
+- #f5f5f5 (light) - light background
+
+ADD NEW CUISINE:
+In script.js, find foodsByType and add food names
+
+===================================
+FOODS AVAILABLE:
+===================================
+
+South Indian:
+- idly, dosa, samosa, vada, uttapam, rasam
+
+Chinese:
+- noodles, fried rice, spring roll
+
+Italian:
+- pizza, pasta
+
+Products:
+- maggie, coca cola, sprite
+
+===================================
+FILE STORAGE:
+===================================
+
+When someone fills a form:
+- Data saved to feedbacks.txt
+- Data saved to contacts.txt
+- Check these files to see submitted data
+- Files auto-created on first submission
+
+===================================
+BROWSER SUPPORT:
+===================================
+
+Works on:
+✅ Chrome
+✅ Firefox
+✅ Safari
+✅ Edge
+✅ Mobile browsers
+
+===================================
+NO DATABASE NEEDED!
+===================================
+
+This project uses:
+- JavaScript for food data (in memory)
+- localStorage for theme preference
+- Text files for form submissions
+- NO MySQL or any database required!
+
+===================================
+TROUBLESHOOTING:
+===================================
+
+❌ Page won't load
+   → Check all files are in same folder
+   → Check server is running (php -S or Apache)
+
+❌ Analyze button doesn't work
+   → Check if JavaScript is enabled
+   → Reload page
+
+❌ Forms not saving
+   → Make sure folder has write permissions
+   → Check feedbacks.txt and contacts.txt created
+
+❌ Styling looks wrong
+   → Clear browser cache (Ctrl+Shift+Delete)
+   → Check style.css file exists
+
+===================================
+GREAT FOR LEARNING:
+===================================
+
+This project teaches:
+✅ HTML basics
+✅ CSS styling & themes
+✅ JavaScript fundamentals
+✅ Form handling with PHP
+✅ File I/O operations
+✅ DOM manipulation
+✅ LocalStorage usage
+✅ Responsive design
+
+===================================
+THAT'S ALL! 🎉
+===================================
+
+Simple, clean code.
+Perfect for 2nd year CSE students.
+No frameworks, no dependencies.
+Just HTML, CSS, JavaScript, and PHP.
+
+Good luck! 🚀
