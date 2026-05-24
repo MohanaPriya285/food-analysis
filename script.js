@@ -46,7 +46,7 @@ const productImages = {
     'maggie': 'maggie.png',
     'coca cola': 'coca_cola.png',
     'sprite': 'sprite.png',
-    'biryani': 'biryani.png',
+    'biryani': 'chicken_briyani.png',
     'butter chicken': 'butter_chicken.png',
     'naan': 'naan.png',
     'dal makhani': 'dal_makhani.png',
