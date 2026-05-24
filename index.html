@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-logo">proven</div>
         <ul class="nav-links">
@@ -18,50 +17,42 @@
         <button class="theme-btn" onclick="toggleTheme()">Theme</button>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>HELLO!!!!</h1>
         <p>What are you eating today?</p>
     </div>
 
-    <!-- Search Box -->
     <div class="search-box">
         <input type="text" id="foodSearch" placeholder="Enter the food name">
         <button onclick="analyzeFood()">Analyze</button>
     </div>
 
-    <!-- Food Cards -->
     <div class="cards-container">
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/south.jpg" alt="South Indian Food">
             <div class="card-name">South Indian</div>
             <a href="food.html?type=south" class="card-link">View Foods</a>
         </div>
-
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/north.jpg" alt="North Indian Food">
             <div class="card-name">North Indian</div>
             <a href="food.html?type=north" class="card-link">View Foods</a>
         </div>
-
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/chinese.jpg" alt="Chinese Food">
             <div class="card-name">Chinese</div>
             <a href="food.html?type=chinese" class="card-link">View Foods</a>
         </div>
-
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/japan.jpg" alt="Japanese Food">
             <div class="card-name">Japanese</div>
             <a href="food.html?type=japanese" class="card-link">View Foods</a>
         </div>
-
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/korean.webp" alt="Korean Food">
             <div class="card-name">Korean</div>
             <a href="food.html?type=korean" class="card-link">View Foods</a>
         </div>
-
         <div class="card" onmouseover="cardUp(this)" onmouseout="cardDown(this)">
             <img class="card-image" src="Image/italian.jpg" alt="Italian Food">
             <div class="card-name">Italian</div>
@@ -69,13 +60,11 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Proven - Food Health Analysis</p>
         <p>Developed by PTU CSE Students</p>
     </footer>
 
-    <!-- Modal for food details -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
