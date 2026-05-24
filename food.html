@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-logo">proven</div>
         <ul class="nav-links">
@@ -18,13 +17,11 @@
         <button class="theme-btn" onclick="toggleTheme()">THEME</button>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1 id="cuisineTitle">SOUTH INDIAN FOODS</h1>
         <p>Browse and analyze foods by cuisine</p>
     </div>
 
-    <!-- Filter Buttons -->
     <div class="filter-buttons">
         <a href="food.html?type=south" class="filter-btn">South Indian</a>
         <a href="food.html?type=north" class="filter-btn">North Indian</a>
@@ -34,18 +31,13 @@
         <a href="food.html?type=italian" class="filter-btn">Italian</a>
     </div>
 
-    <!-- Foods Grid -->
-    <div class="grid" id="foodGrid">
-        <!-- Foods will load here -->
-    </div>
+    <div class="grid" id="foodGrid"></div>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Proven - Food Health Analysis</p>
         <p>Developed by CSE Students</p>
     </footer>
 
-    <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -55,34 +47,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        function loadFoods() {
-            let type = getParam('type') || 'south';
-            let foods = foodsByType[type] || [];
-            
-            document.getElementById('cuisineTitle').textContent = cuisineTitles[type] || 'FOODS';
-            
-            let html = '';
-            foods.forEach(food => {
-                if (foodData[food]) {
-                    let imageUrl = getFoodImageUrl(food);
-                    html += `
-                        <div class="product-card" style="background-image: url('${imageUrl}');">
-                            <h3>${foodData[food].name}</h3>
-                            <button onclick="showFood('${food}')">Analyze</button>
-                        </div>
-                    `;
-                }
-            });
-            document.getElementById('foodGrid').innerHTML = html;
-        }
-
-        function getParam(name) {
-            let url = new URL(window.location);
-            return url.searchParams.get(name);
-        }
-
-        loadFoods();
-    </script>
 </body>
 </html>
