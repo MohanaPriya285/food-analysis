@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-logo">proven</div>
         <ul class="nav-links">
@@ -18,30 +17,23 @@
         <button class="theme-btn" onclick="toggleTheme()">THEME</button>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>PRODUCT ANALYSIS</h1>
         <p>Search products and check nutrition facts</p>
     </div>
 
-    <!-- Search Box -->
     <div class="search-box">
         <input type="text" id="productSearch" placeholder="Search product (maggie, cola, sprite)">
         <button onclick="searchProduct()">Search</button>
     </div>
 
-    <!-- Products Grid -->
-    <div class="grid" id="productGrid">
-        <!-- Products will load here -->
-    </div>
+    <div class="grid" id="productGrid"></div>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Proven - Food Health Analysis</p>
         <p>Developed by CSE Students</p>
     </footer>
 
-    <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -51,40 +43,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        loadAllProducts();
-
-        function loadAllProducts() {
-            let html = '';
-            for (let food in foodData) {
-                let imageUrl = getFoodImageUrl(food);
-                html += `
-                    <div class="product-card" style="background-image: url('${imageUrl}');">
-                        <h3>${foodData[food].name}</h3>
-                        <button onclick="showFood('${food}')">Analyze</button>
-                    </div>
-                `;
-            }
-            document.getElementById('productGrid').innerHTML = html;
-        }
-
-        function searchProduct() {
-            let search = document.getElementById('productSearch').value.toLowerCase();
-            let html = '';
-            
-            for (let food in foodData) {
-                if (food.includes(search) || foodData[food].name.toLowerCase().includes(search)) {
-                    let imageUrl = getFoodImageUrl(food);
-                    html += `
-                        <div class="product-card" style="background-image: url('${imageUrl}');">
-                            <h3>${foodData[food].name}</h3>
-                            <button onclick="showFood('${food}')">Analyze</button>
-                        </div>
-                    `;
-                }
-            }
-            document.getElementById('productGrid').innerHTML = html;
-        }
-    </script>
 </body>
 </html>
