@@ -294,6 +294,13 @@ const cuisineTitles = {
     'korean': 'KOREAN FOODS',
     'italian': 'ITALIAN FOODS'
 };
+
+// Get background image URL for a food item
+function getFoodImageUrl(foodKey) {
+    let imageName = foodKey.toLowerCase().replace(/ /g, '_');
+    return `./${imageName}.png`;
+}
+
 function cardUp(card) {
     card.style.transform = 'translateY(-10px)';
 }
@@ -377,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (productSearch) {
         productSearch.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                searchProduct();
+                if (typeof searchProduct === 'function') searchProduct();
             }
         });
     }
