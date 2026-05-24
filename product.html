@@ -57,8 +57,9 @@
         function loadAllProducts() {
             let html = '';
             for (let food in foodData) {
+                let imageUrl = getFoodImageUrl(food);
                 html += `
-                    <div class="product-card">
+                    <div class="product-card" style="background-image: url('${imageUrl}');">
                         <h3>${foodData[food].name}</h3>
                         <button onclick="showFood('${food}')">Analyze</button>
                     </div>
@@ -73,8 +74,9 @@
             
             for (let food in foodData) {
                 if (food.includes(search) || foodData[food].name.toLowerCase().includes(search)) {
+                    let imageUrl = getFoodImageUrl(food);
                     html += `
-                        <div class="product-card">
+                        <div class="product-card" style="background-image: url('${imageUrl}');">
                             <h3>${foodData[food].name}</h3>
                             <button onclick="showFood('${food}')">Analyze</button>
                         </div>
