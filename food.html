@@ -65,8 +65,9 @@
             let html = '';
             foods.forEach(food => {
                 if (foodData[food]) {
+                    let imageUrl = getFoodImageUrl(food);
                     html += `
-                        <div class="product-card">
+                        <div class="product-card" style="background-image: url('${imageUrl}');">
                             <h3>${foodData[food].name}</h3>
                             <button onclick="showFood('${food}')">Analyze</button>
                         </div>
